@@ -1,0 +1,4 @@
+TESTES AUTOMATIZADOS — WCG CONTROLE FINANCEIRO 2.2.2
+Resultado: 25/25 verificações aprovadas.
+Detalhes individuais e evidências de cada teste estão em TESTES_AUTOMATIZADOS.json.
+Nota: os testes de interação Chromium utilizaram armazenamento em memória injetado devido ao bloqueio de navegação local/localhost neste ambiente; não certificam persistência real entre sessões.

@@ -1,0 +1,5 @@
+WCG Controle Financeiro
+Versão: 2.2.2
+Build: 2026-10-19
+Escopo: controle financeiro genérico e personalizável, com módulo fiscal.
+Armazenamento local no navegador; não inclui login, sincronização ou múltiplos usuários.

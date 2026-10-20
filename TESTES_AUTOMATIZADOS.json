@@ -1,0 +1,127 @@
+[
+  {
+    "test": "Carregamento e título",
+    "passed": true,
+    "detail": "WCG Controle Financeiro"
+  },
+  {
+    "test": "Logo visível",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Navegação principal",
+    "passed": true,
+    "detail": "5"
+  },
+  {
+    "test": "Cadastro de entrada",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Saldo atualiza após entrada",
+    "passed": true,
+    "detail": "R$ 500,00"
+  },
+  {
+    "test": "Cadastro de despesa",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Saldo líquido após despesa",
+    "passed": true,
+    "detail": "R$ 375,00"
+  },
+  {
+    "test": "Transferência cadastrada",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Transferência não altera saldo",
+    "passed": true,
+    "detail": "R$ 375,00"
+  },
+  {
+    "test": "Filtro de histórico",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Importação CSV fiscal",
+    "passed": true,
+    "detail": "Importadas: 1. Duplicidades ignoradas: 0. Arquivos processados."
+  },
+  {
+    "test": "Primeiro recebimento parcial",
+    "passed": true,
+    "detail": "Nota teste · TESTE-5000\n2026-10-19 · Cliente Teste · nota_teste.csv\nIncluída no total\nRecebido: R$ 1.000,00 · Saldo: R$ 4.000,00\nChave: CHAVE-TESTE-5000\nR$ 5.000,00\nRegistrar recebimento\nMarcar cancelada\nExcluir"
+  },
+  {
+    "test": "Segundo recebimento parcial e saldo",
+    "passed": true,
+    "detail": "Nota teste · TESTE-5000\n2026-10-19 · Cliente Teste · nota_teste.csv\nIncluída no total\nRecebido: R$ 2.000,00 · Saldo: R$ 3.000,00\nChave: CHAVE-TESTE-5000\nR$ 5.000,00\nRegistrar recebimento\nMarcar cancelada\nExcluir"
+  },
+  {
+    "test": "Caixa conta só recebimentos",
+    "passed": true,
+    "detail": "R$ 2.375,00"
+  },
+  {
+    "test": "Detecção de duplicidade",
+    "passed": true,
+    "detail": "Importadas: 0. Duplicidades ignoradas: 1. Arquivos processados."
+  },
+  {
+    "test": "Estado serializado contém nota e recebimentos",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Saldo fiscal preservado",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Backup JSON gera arquivo",
+    "passed": true,
+    "detail": "WCG_Backup_Financeiro_2026-10-20.json"
+  },
+  {
+    "test": "Personalização do título",
+    "passed": true,
+    "detail": "Meu Controle Teste"
+  },
+  {
+    "test": "Escopo genérico (sem MEI/frota/construção)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Sem erros JavaScript não tratados",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "Sintaxe JavaScript",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "test": "IDs HTML únicos",
+    "passed": true,
+    "detail": "74 IDs, 0 duplicados"
+  },
+  {
+    "test": "Manifest JSON e ícones",
+    "passed": true,
+    "detail": "missing=[]"
+  },
+  {
+    "test": "Service worker cache version",
+    "passed": true,
+    "detail": "const CACHE_NAME = 'wcg-controle-financeiro-v2.2.2';"
+  }
+]

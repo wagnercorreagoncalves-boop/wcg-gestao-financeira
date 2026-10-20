@@ -1,0 +1,17 @@
+WCG CONTROLE FINANCEIRO — VERSÃO 2.2.2
+
+COMO ABRIR
+- Para uso local, abra index.html em navegador atualizado. Alguns recursos PWA/service worker só funcionam em HTTPS ou localhost.
+- Para instalar como aplicativo no iPhone, publique o pacote em uma hospedagem HTTPS; abra no Safari e use Compartilhar > Adicionar à Tela de Início.
+
+DADOS E PRIVACIDADE
+- Os dados ficam no armazenamento local do navegador/aparelho. Limpar os dados do navegador pode apagá-los. Faça backups regularmente.
+- Não há login, sincronização ou isolamento seguro entre clientes/aparelhos. Não é um SaaS multiusuário.
+- O assistente de texto é local, baseado em regras, não uma IA online.
+
+NOTAS FISCAIS
+- Importação XML/CSV depende do formato do arquivo; revise os dados importados. PDF não é extraído automaticamente. O app não consulta portais fiscais nem valida autenticidade fiscal.
+- O relatório anual é auxiliar e não substitui contador.
+
+MARCA E VERSÃO
+- Versão única do pacote: 2.2.2. Consulte VERSAO.txt e AUDITORIA.txt.
