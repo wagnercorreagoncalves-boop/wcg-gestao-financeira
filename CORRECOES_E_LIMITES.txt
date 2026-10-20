@@ -1,0 +1,9 @@
+WCG Controle Financeiro v2.3.0 — correções aplicadas
+
+- Assistente salva automaticamente uma única movimentação com valor e descrição detectáveis.
+- Mensagens com vários valores não são salvas como um lançamento só; o sistema orienta separar.
+- Comandos de cancelar/excluir procuram um único lançamento e pedem confirmação.
+- Se houver falha ao gravar, o estado anterior é restaurado e a mensagem não afirma sucesso.
+- Transferência da sugestão para formulário usa valor com duas casas e dispara evento input.
+
+Limites não certificados: áudio/transcrição não foi implementado neste pacote; para áudio é necessária integração de reconhecimento de voz compatível com o navegador. Armazenamento continua local por navegador/dispositivo, sem sincronização entre Safari e Chrome. O pacote não publica nem altera automaticamente o site GitHub Pages. Teste em navegador real ainda é obrigatório antes de usar dados financeiros reais.

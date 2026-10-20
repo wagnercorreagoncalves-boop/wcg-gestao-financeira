@@ -1,58 +1,31 @@
 WCG CONTROLE FINANCEIRO — RELATÓRIO DE AUDITORIA
-Versão liberada do pacote: 2.2.2
+Versão: 2.0.0
 Data: 19/10/2026
 
-IDENTIDADE E CONTROLE DE VERSÃO
-- HTML, VERSAO.txt, LEIA-ME.txt, nome do cache do Service Worker e pacote identificam a versão 2.2.2.
-- Logotipo da marca embutido no cabeçalho HTML; arquivos de ícones do PWA incluídos.
-- Manifest JSON validado; arquivos de ícones 192x192 e 512x512 presentes.
-- IDs HTML: 74 identificados, sem duplicidades.
-- Sintaxe JavaScript aprovada por Node.js --check.
-- Escopo genérico: não contém regras específicas de MEI, gestão de frotas ou construção civil.
-
-TESTES AUTOMATIZADOS DE INTERFACE — 25/25 APROVADOS
-Executados com Chromium/Playwright contra o HTML real, com uma camada de armazenamento em memória injetada para contornar o bloqueio de navegação do ambiente de teste:
-1. Carregamento e título.
-2. Logotipo visível.
-3. Navegação principal.
-4. Cadastro de entrada.
-5. Saldo após entrada.
-6. Cadastro de despesa.
-7. Saldo líquido após despesa.
-8. Cadastro de transferência.
-9. Transferência não altera saldo consolidado.
-10. Filtro do histórico.
-11. Importação CSV fiscal.
-12. Primeiro recebimento parcial.
-13. Segundo recebimento parcial e saldo em aberto.
-14. Recebimentos entram no caixa uma única vez.
-15. Detecção de importação duplicada.
-16. Estado serializado inclui nota e dois recebimentos vinculados.
-17. Saldo fiscal exibido permanece correto após os recebimentos.
-18. Geração de backup JSON.
-19. Personalização do título.
-20. Escopo genérico conferido.
-21. Ausência de exceções JavaScript não tratadas durante os fluxos executados.
-22. Sintaxe JavaScript.
-23. IDs HTML únicos.
-24. Manifest JSON e ícones presentes.
-25. Cache do Service Worker identificado como v2.2.2.
-
-CENÁRIO FINANCEIRO VALIDADO
-- Nota importada via CSV: R$ 5.000,00.
-- Dois recebimentos registrados: R$ 1.000,00 + R$ 1.000,00.
-- Total recebido mostrado: R$ 2.000,00.
-- Saldo da nota mostrado: R$ 3.000,00.
-- Caixa: cada recebimento cria uma única entrada financeira; o valor bruto da nota não é somado novamente ao caixa.
-- Reimportação do mesmo CSV: uma duplicidade ignorada.
-
-LIMITES DA AUDITORIA — LEIA ANTES DO USO
-- O ambiente bloqueia a navegação do Chromium para arquivo local/servidor local. Os testes de interface foram executados com a página carregada diretamente e armazenamento em memória injetado; portanto, a persistência real do localStorage após fechar/reabrir o navegador NÃO foi certificada neste ambiente.
-- Não foi executado teste de instalação PWA em iPhone/HTTPS.
-- Foi validada a importação CSV com arquivo sintético; não foram certificados todos os formatos XML de NF-e/NFS-e nem amostras reais de diferentes emissores. A compatibilidade XML depende do layout do documento.
-- PDF não é extraído automaticamente. O aplicativo não consulta portais fiscais, não autentica notas e não garante detectar todos os eventos de cancelamento/substituição.
-- Os dados ficam localmente no navegador/aparelho. Não há login, sincronização ou isolamento seguro entre clientes. Não anunciar como SaaS multiusuário.
-- O relatório fiscal é auxiliar e não substitui a conferência contábil.
-
 RESULTADO
-Aprovado nos 25 testes automatizados listados e nas verificações estáticas. A aprovação não abrange persistência real entre sessões, instalação PWA em iPhone/HTTPS nem compatibilidade universal com XML fiscal; esses limites são explícitos e não devem ser apresentados como testados.
+- 33/33 verificações automatizadas de interação aprovadas em Chromium.
+- Sintaxe JavaScript: APROVADA (Node.js --check).
+- Estrutura HTML e idioma pt-BR: APROVADOS.
+- IDs HTML duplicados: ZERO.
+- Referências locais de arquivos: TODAS PRESENTES.
+- Manifest JSON: VÁLIDO; ícones 192x192 e 512x512 conferidos.
+- Logotipo: embutido no index.html e carregado no teste do navegador, evitando imagem quebrada quando o HTML é aberto sozinho.
+- Escopo da aplicação: não há tela ou texto de limite MEI, gestão de frotas ou construção no HTML visível.
+- Cache do service worker: versão atualizada para v2.
+
+TESTES FUNCIONAIS AUTOMATIZADOS
+- Abrir painel e navegação.
+- Cadastrar entrada, despesa, retirada e transferência.
+- Cálculo de saldo, totais, pendências a receber/a pagar e marcação de pendência como paga.
+- Cancelados não alteram saldo; transferências não alteram o saldo consolidado.
+- Edição, exclusão, filtros e pesquisa.
+- Personalização do título e criação de categoria.
+- Assistente local: valor brasileiro com separador de milhar, classificação sugerida e confirmação antes de salvar.
+- Exportação CSV e geração de backup JSON.
+- Restauração de backup válido e rejeição de arquivo inválido sem apagar os dados.
+- Nenhuma exceção JavaScript detectada nos fluxos testados.
+
+LIMITES QUE NÃO DEVEM SER CONFUNDIDOS COM APROVAÇÃO
+Os testes de interação foram executados em Chromium usando um armazenamento local simulado, pois o ambiente de execução bloqueou a navegação do navegador para o servidor local. Por isso, persistência real após fechar/reabrir o navegador e instalação PWA em HTTPS não foram certificadas neste ambiente. Esses pontos devem ser confirmados na hospedagem e no iPhone antes de anunciar o produto como pronto para venda.
+
+O aplicativo atual é genérico, personalizável e local. Não tem login, sincronização nem separação segura entre clientes, e o assistente é baseado em regras locais, não uma IA online. Não anunciar como SaaS multiusuário sem backend, autenticação e testes adicionais.

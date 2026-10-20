@@ -1,0 +1,24 @@
+WCG CONTROLE FINANCEIRO — AUDITORIA COMPLEMENTAR DO MÓDULO DE NOTAS
+Versão do módulo: 2.1.0
+Data: 19/10/2026
+
+VERIFICAÇÕES REALIZADAS
+- Sintaxe JavaScript verificada com Node.js --check: aprovada.
+- HTML: 74 IDs identificados, sem IDs duplicados.
+- Navegação inclui a tela “Notas fiscais”.
+- Armazenamento local contempla array de notas e mantém compatibilidade com backups antigos sem campo invoices.
+- Importação implementada para XML fiscal compatível e CSV.
+- CSV exporta relatório anual.
+- Totais anuais/mensais excluem notas marcadas como canceladas.
+- Detecção de duplicidade usa chave fiscal quando disponível e combinação de número/data/emitente/valor como alternativa.
+- Edição manual do estado de cancelamento e exclusão disponíveis.
+- Ausência de texto ou telas de MEI/gestão de frotas no HTML.
+- Ícones e manifest permanecem incluídos no pacote.
+
+LIMITES IMPORTANTES
+- A estrutura XML de NFS-e varia por prefeitura/provedor; não há garantia de compatibilidade com todos os XMLs.
+- O sistema não consulta o portal fiscal, não valida autenticidade da nota e não garante identificar todos os cancelamentos/substituições.
+- Não há extração automática de PDF.
+- A importação e os totais precisam ser validados com amostras reais de XML/CSV antes de uso tributário.
+- A auditoria de sintaxe/estrutura não substitui teste de ponta a ponta em iPhone e hospedagem HTTPS. Não declarar pronto para venda comercial antes desses testes.
+- Dados são locais, sem autenticação, sincronização ou separação segura entre clientes.
