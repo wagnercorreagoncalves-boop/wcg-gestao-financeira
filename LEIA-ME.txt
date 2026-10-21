@@ -1,17 +1,25 @@
-WCG CONTROLE FINANCEIRO — VERSÃO 2.2.2
+WCG CONTROLE FINANCEIRO — CHATBOT IA (BASE 2.3.11)
 
-COMO ABRIR
-- Para uso local, abra index.html em navegador atualizado. Alguns recursos PWA/service worker só funcionam em HTTPS ou localhost.
-- Para instalar como aplicativo no iPhone, publique o pacote em uma hospedagem HTTPS; abra no Safari e use Compartilhar > Adicionar à Tela de Início.
+ARQUIVOS
+- WCG_Controle_Financeiro_2.4.0_CHATBOT_IA.html: versão de trabalho do HTML original 2.3.11 com o painel de chatbot consultivo.
+- WCG_Chatbot_IA_Backend/: servidor separado que conecta o painel à API da OpenAI.
 
-DADOS E PRIVACIDADE
-- Os dados ficam no armazenamento local do navegador/aparelho. Limpar os dados do navegador pode apagá-los. Faça backups regularmente.
-- Não há login, sincronização ou isolamento seguro entre clientes/aparelhos. Não é um SaaS multiusuário.
-- O assistente de texto é local, baseado em regras, não uma IA online.
+IMPORTANTE
+O chatbot só responde de verdade depois que o backend estiver publicado e configurado. O HTML não contém chave da OpenAI. Não publique a chave no GitHub. A versão 2.3.11 original não foi modificada e deve ser guardada como cópia de segurança.
 
-NOTAS FISCAIS
-- Importação XML/CSV depende do formato do arquivo; revise os dados importados. PDF não é extraído automaticamente. O app não consulta portais fiscais nem valida autenticidade fiscal.
-- O relatório anual é auxiliar e não substitui contador.
+PUBLICAR O BACKEND NO RENDER
+1. Crie um repositório GitHub SEPARADO para o backend. Envie para ele apenas server.js, package.json e .gitignore (não envie .env nem uma chave secreta).
+2. No Render, crie um Web Service ligado a esse repositório. Runtime: Node. Build Command: npm install. Start Command: npm start.
+3. Em Environment, configure OPENAI_API_KEY com sua chave da OpenAI. Opcional: OPENAI_MODEL=gpt-5-mini. Configure ALLOWED_ORIGINS=https://wagnercorreagoncalves-boop.github.io.
+4. Publique e teste https://SEU-SERVICO.onrender.com/health. Deve retornar JSON com ok:true e configured:true.
+5. Abra o HTML de trabalho e preencha o campo “Endereço do servidor de IA” com a URL HTTPS do Render, sem /health no final.
+6. Faça uma pergunta simples no chatbot. Só considere integrado depois de receber resposta real.
 
-MARCA E VERSÃO
-- Versão única do pacote: 2.2.2. Consulte VERSAO.txt e AUDITORIA.txt.
+PUBLICAR O HTML
+Depois de validar a versão de trabalho e testar as funções existentes, faça backup do index.html atual do site. Só então substitua o index.html pelo conteúdo do HTML de trabalho. Não apague os arquivos de backup.
+
+LIMITES E SEGURANÇA
+- O chatbot é consultivo e não altera os registros financeiros.
+- Envia a pergunta e um pequeno resumo numérico agregado ao backend. Não envia descrições nem lançamentos individuais por padrão.
+- O servidor tem limite de requisições e CORS, mas não implementa login por usuário. Para disponibilização pública/multiusuário, adicionar autenticação, limites de uso por conta e controles de custo antes de lançar amplamente.
+- Nunca compartilhe sua chave de API. O uso da API pode gerar cobrança separada da assinatura do ChatGPT.
