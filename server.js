@@ -161,4 +161,4 @@ app.use((err, _req, res, _next) => {
 
 app.listen(PORT, () => {
   console.log(`WCG Chatbot IA disponível na porta ${PORT}`);
-});
+  });
